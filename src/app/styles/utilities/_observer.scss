@@ -1,0 +1,4 @@
+.ccivEl{transition: 2s transform ease} 
+.ccivEl.in-viewport{transform:rotateY(0deg)} 
+.ccivEl.not-in-viewport{transform:rotateY(180deg)} 
+.ccivNo-script .ccivEl{transform:none !important}

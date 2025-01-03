@@ -1,0 +1,78 @@
+.richTextAndImage {
+	h1 {
+		font-size: 32px;
+		margin-top: 0;
+		// margin-bottom: 8px;
+	}
+	p {
+		// margin-top: 0;
+		// margin-bottom: 0;
+		max-width: 500px;
+	}
+    .content {
+        p {
+
+            transition: all 0.4s ease-out;
+            opacity: 0;
+            margin-top: 20px;
+        }
+    }
+    
+    .fadeInText {
+        p {
+
+            opacity: 1;
+            margin-top: 8px;
+        }
+    }
+
+    .image {
+        // opacity: 0.8;
+        // margin-top: 20px;
+        filter: grayscale(100%);    
+        filter: blur(2px) grayscale(100%);
+
+        transition: all 0.4s ease-out;
+        
+    }
+    .fadeIn {
+        // margin-top: 0;
+        // opacity: 1;
+        filter: blur(0) grayscale(0%);
+
+    }
+	img {
+		max-height: 50vw;
+		width: auto;
+        aspect-ratio: 4 / 3;
+		object-fit: cover;
+        border-radius: 6px;
+
+	}
+	@media (max-width: 1024px) {
+		img {
+			width: 100%;
+		}
+	}
+
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        scale: 1.1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0.5;
+    }
+}
+
+.reverse {
+	@media (min-width: 1024px) {
+		div:first-child {
+			order: 2;
+		}
+	}
+}
