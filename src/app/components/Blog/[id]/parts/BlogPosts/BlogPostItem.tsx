@@ -1,6 +1,8 @@
+import { PortableText } from "next-sanity";
 import { useNextSanityImage } from "next-sanity-image";
 import Img from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import sanityClient from "../../../../../lib/utils/sanityClient";
 import urlSafe from "../../../../../lib/utils/urlSafe";
 import styles from "../../../../../styles/styles.module.scss";
@@ -11,17 +13,20 @@ const BlogPostItem: React.FC<types.BlogPost> = ({
 	date,
 	image,
 	imageCaption,
+	preamble,
 }) => {
+	const params = useParams<{ slug: string[] }>();
+	const slug = params?.slug?.[0] ?? "";
 	const imageProps = useNextSanityImage(sanityClient, image) || null;
 
 	return (
-		<Link href={`/blog/${urlSafe(title)}`} className={styles.blogPostsItem}>
+		<Link href={`/${slug}/${urlSafe(title)}`} className={styles.blogPostsItem}>
 			{title && <h1>{title}</h1>}
-			{/* {preamble && (
+			{preamble && (
 				<div className={styles.preamble}>
 					<PortableText value={preamble} />
 				</div>
-			)} */}
+			)}
 			{date && <p className={styles.date}>{date}</p>}
 			{image && imageCaption && imageProps && (
 				<Img
@@ -29,7 +34,6 @@ const BlogPostItem: React.FC<types.BlogPost> = ({
 					width={imageProps.width}
 					height={imageProps.height}
 					alt={imageCaption}
-					// style={{ width: "100%", height: "auto" }} // layout="responsive" prior to Next 13.0.0
 					sizes="(max-width: 800px) 100vw, 800px"
 					placeholder="blur"
 					blurDataURL={imageProps.src}

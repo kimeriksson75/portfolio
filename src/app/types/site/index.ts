@@ -34,7 +34,7 @@ export type Section = SanityDocument<{
 	_type: "section";
 	_key: string;
 	name: string;
-	content: Array<RichTextAndImage>;
+	content: Array<RichTextAndImage | Hero | RichText | Image | Blog | Vimeo>;
 }>;
 
 export type Hero = SanityDocument<{
@@ -89,6 +89,33 @@ export type RichTextAndImage = SanityDocument<{
 		content: string;
 	}>;
 	layout: "imageLeft" | "imageRight";
+}>;
+
+export type RichText = SanityDocument<{
+	_type: "RichText";
+	content: SanityDocument<{
+		_type: "richText";
+		content: string;
+	}>;
+}>;
+
+export type Image = SanityDocument<{
+	_type: "Image";
+	image: SanityDocument<{
+		_type: "image";
+		asset: {
+			_ref: string;
+		};
+	}>;
+	imageCaption: string;
+}>;
+
+export type Vimeo = SanityDocument<{
+	_type: "Vimeo";
+	vimeo: SanityDocument<{
+		_type: "Vimeo";
+		id: number;
+	}>;
 }>;
 
 export type Blog = SanityDocument<{
@@ -153,6 +180,7 @@ export type BlogPost = SanityDocument<{
 	}>;
 	imageAlt: string;
 	imageCaption: string;
+	additionalContent: Array<RichText | Image | Vimeo>;
 	tags: string[];
 	_key: string;
 }>;

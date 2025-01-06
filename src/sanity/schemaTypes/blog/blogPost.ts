@@ -53,6 +53,12 @@ export const blogPost = defineType({
 			validation: (rule) => rule.required(),
 		}),
 		defineField({
+			title: "Mer innehåll",
+			name: "additionalContent",
+			type: "array",
+			of: [{ type: "Image" }, { type: "RichText" }, { type: "Vimeo" }],
+		}),
+		defineField({
 			type: "array",
 			name: "tags",
 			title: "Taggar",

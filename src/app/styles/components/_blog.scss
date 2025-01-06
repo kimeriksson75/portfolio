@@ -1,11 +1,17 @@
 .blog {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    // gap: 24px;
 
     h1 {
         font-size: 36px;
+        margin: 0;
     }
+
+    p {
+        max-width: 40vw;
+    }
+
 }
 .blogPostsItem {
     display: flex;

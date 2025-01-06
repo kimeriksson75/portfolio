@@ -38,7 +38,14 @@ export const pageType = defineType({
 		defineField({
 			name: "sections",
 			type: "array",
-			of: [{ type: "RichTextAndImage" }, { type: "Hero" }, { type: "Blog" }],
+			of: [
+				{ type: "RichTextAndImage" },
+				{ type: "Hero" },
+				{ type: "Blog" },
+				{ type: "Image" },
+				{ type: "RichText" },
+				{ type: "Vimeo" },
+			],
 		}),
 	],
 });

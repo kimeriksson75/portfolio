@@ -11,7 +11,6 @@ import BlogPosts from "./parts/BlogPosts";
 const Blog: React.FC<types.Blog> = ({ title, content, posts }) => {
 	const params = useParams<{ slug: string[] }>();
 	const id = params?.slug?.[1] ?? "";
-	console.log("id", id);
 
 	const generateBlogPostsData = (): types.BlogPost[] => {
 		if (!posts || posts?.length < 1) return [];

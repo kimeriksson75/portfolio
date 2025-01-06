@@ -1,8 +1,9 @@
-@import "./layout/layout";
-@import "./components/header";
-@import "./components/footer";
-@import "./components/burger";
-@import "./components/hero";
-@import "./components/blog";
-@import "./components/richTextAndImage";
-@import "./utilities/observer";
+@use "./layout/layout";
+@use "./components/header";
+@use "./components/footer";
+@use "./components/burger";
+@use "./components/hero";
+@use "./components/vimeo";
+@use "./components/blog";
+@use "./components/richTextAndImage";
+@use "./utilities/observer";

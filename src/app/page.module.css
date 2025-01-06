@@ -26,20 +26,13 @@
 .main {
 	display: flex;
 	flex-direction: column;
-	width: 100vw;
-	/* height: 100dvh; */
+
 	max-height: 100%;
 	flex: 1;
 }
 
 .main ol {
 	font-family: var(--font-geist-mono);
-	/* padding-left: 0;
-	margin: 0; */
-	/* font-size: 14px;
-	line-height: 24px;
-	letter-spacing: -0.01em;
-	list-style-position: inside; */
 }
 
 .main p,
@@ -132,11 +125,6 @@ a.secondary {
 }
 
 @media (max-width: 600px) {
-	.page {
-		/* padding: 32px;
-		padding-bottom: 80px; */
-	}
-
 	.main {
 		align-items: center;
 	}
