@@ -1,4 +1,3 @@
-import { PortableText } from "next-sanity";
 import { useNextSanityImage } from "next-sanity-image";
 import Img from "next/image";
 import Link from "next/link";
