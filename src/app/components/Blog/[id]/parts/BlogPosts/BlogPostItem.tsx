@@ -13,7 +13,6 @@ const BlogPostItem: React.FC<types.BlogPost> = ({
 	date,
 	image,
 	imageCaption,
-	preamble,
 }) => {
 	const params = useParams<{ slug: string[] }>();
 	const slug = params?.slug?.[0] ?? "";
@@ -22,11 +21,6 @@ const BlogPostItem: React.FC<types.BlogPost> = ({
 	return (
 		<Link href={`/${slug}/${urlSafe(title)}`} className={styles.blogPostsItem}>
 			{title && <h1>{title}</h1>}
-			{preamble && (
-				<div className={styles.preamble}>
-					<PortableText value={preamble} />
-				</div>
-			)}
 			{date && <p className={styles.date}>{date}</p>}
 			{image && imageCaption && imageProps && (
 				<Img
