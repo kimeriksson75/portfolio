@@ -48,8 +48,6 @@ const BlogPost: React.FC<types.BlogPost> = ({
 					width={imageProps.width}
 					height={imageProps.height}
 					alt={imageAlt}
-					style={{ width: "100%", height: "auto" }} // layout="responsive" prior to Next 13.0.0
-					sizes="(max-width: 800px) 100vw, 800px"
 					placeholder="blur"
 					blurDataURL={imageProps.src}
 				/>
