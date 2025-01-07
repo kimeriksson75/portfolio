@@ -11,7 +11,7 @@ export default async function Home({
 	params,
 }: { params: Promise<{ slug: string }> }) {
 	const site = await client.fetch(SITE_QUERY);
-	const slug = (await params).slug;
+	const slug = (await params)?.slug ?? ["home"];
 	const pageData = site.pages.find(
 		(page: Page) => page.slug.current === slug[0],
 	);
